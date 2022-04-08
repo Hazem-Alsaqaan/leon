@@ -1,0 +1,328 @@
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+:root {
+  --maincolor: #10cab7;
+  --mainfont: "Work Sans", sans-serif;
+  --section-background: #eeeeee;
+  --section-margin: 50px 0px 50px 0px;
+}
+body {
+  font-family: "Righteous", cursive;
+  font-family: "Work Sans", sans-serif;
+  margin: 0;
+}
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+/* header */
+.header {
+  padding: 20px;
+}
+div.header > div.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+div.header > div.container .links {
+  position: relative;
+  transition-duration: 1s;
+}
+.header .logo {
+  width: 60px;
+}
+div.header > div.container .links i {
+  font-size: 20px;
+  color: #333;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.header > div.container ul {
+  width: 150px;
+  list-style: none;
+  background-color: #eeeeee;
+  position: absolute;
+  right: 0px;
+  top: calc(100% + 15px);
+  margin: 0px;
+  padding: 0px;
+  display: none;
+  z-index: 1;
+}
+div.header > div.container .links i:hover + ul {
+  display: block;
+}
+div.header > div.container ul::before {
+  content: "";
+  border-width: 10px;
+  border-style: solid;
+  border-color: rgba(0, 128, 0, 0) rgba(0, 0, 255, 0) #eeeeee rgba(0, 0, 0, 0);
+  position: absolute;
+  right: 5px;
+  top: -21px;
+}
+
+div.header > div.container ul li:not(:last-child) {
+  border-bottom: 1px solid black;
+}
+div.header > div.container ul li {
+  padding: 10px 30px 10px 15px;
+}
+
+div.header > div.container ul li a {
+  text-decoration: none;
+  color: black;
+  transition-duration: 1s;
+}
+div.header > div.container ul li:hover a {
+  padding-left: 15px;
+}
+
+/* landing */
+.landing {
+  background-image: url("../images/landing.jpg");
+  background-size: cover;
+  height: calc(100vh - 64px);
+  position: relative;
+}
+.landing > .intro-text {
+  background-color: #ff000000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.landing > .intro-text > h2 {
+  color: var(--maincolor);
+  font-size: 50px;
+  font-weight: bold;
+  text-align: center;
+  margin: 0px;
+}
+.landing > .intro-text p {
+  color: black;
+  font-size: 19px;
+  text-align: center;
+  line-height: 1.8;
+}
+/* feature */
+.feature {
+  background-color: var(--section-background);
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.feature .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 10px;
+}
+.feature > .container .fraction {
+  padding: 20px;
+  text-align: center;
+}
+.feature > .container .fraction i {
+  font-size: 20px;
+  color: var(--maincolor);
+}
+.feature > .container .fraction p {
+  color: rgb(146, 146, 146);
+  line-height: 1.8;
+}
+/* services */
+.header-section {
+  color: #c0c0c0;
+  font-size: 80px;
+  font-weight: 800;
+  text-align: center;
+  margin: 0px;
+}
+
+.services > .container > div > h1 + p {
+  margin: -30px 0px 60px 0px;
+  font-size: 20px;
+  text-align: center;
+  color: #797979;
+}
+.services-fraction {
+  display: grid;
+  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px 30px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+}
+@media (max-width: 767px) {
+  .services-fraction {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.services-fraction div:nth-last-child(2) {
+  grid-row-start: 1;
+  grid-column-start: 3;
+  grid-row-end: 3;
+  grid-column-end: 4;
+  position: relative;
+}
+@media (max-width: 1199px) {
+  .pyramide {
+    display: none;
+  }
+  .services-fraction div:nth-last-child(2)::after {
+    display: none;
+  }
+}
+.services-fraction div:nth-last-child(2)::after {
+  content: "";
+  background-color: #00414d;
+  width: 100px;
+  height: 450px;
+  z-index: -1;
+  position: absolute;
+  right: 30px;
+  top: -35px;
+}
+.services-fraction div {
+  padding: 15px;
+  position: relative;
+}
+.services-fraction div i {
+  position: absolute;
+  left: -40px;
+  top: 30px;
+  font-size: 40px;
+  color: var(--maincolor);
+}
+.services-fraction div p {
+  line-height: 1.8;
+}
+/* portfolio */
+.nonn {
+  background-color: var(--section-background);
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.container > div > h1 + p {
+  margin: -30px 0 30px 0px;
+  font-size: 20px;
+  text-align: center;
+  color: #797979;
+}
+.secondfraction {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+.secondfraction img {
+  max-width: 100%;
+}
+.secondfraction > div {
+  background-color: white;
+  overflow: hidden;
+}
+
+.secondfraction div h2 {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.secondfraction div p {
+  line-height: 1.8;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* about */
+.about {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+.project-area {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+@media (max-width: 991px) {
+  .project-area {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+.textabout {
+  flex-basis: calc(100% - 500px);
+}
+.textabout p:first-child {
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+.textabout p:last-child {
+  font-weight: bold;
+  line-height: 2;
+  margin-bottom: 50px;
+  color: #797979;
+}
+.photo {
+  position: relative;
+  width: 250px;
+  height: 375px;
+}
+
+.photo img {
+  max-width: 100%;
+}
+/* contact */
+.contact {
+  background-color: var(--section-background);
+  margin-top: 80px;
+  margin-bottom: 100px;
+}
+.contact .container {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+.contact > .container div:nth-of-type(2) {
+  text-align: center;
+}
+.contact > .container div:nth-of-type(2) p:first-child {
+  font-size: 35px;
+  font-weight: 800;
+  color: #00414d;
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
+.contact > .container div:nth-of-type(2) p:last-child {
+  font-size: 25px;
+  font-weight: 800;
+  color: var(--maincolor);
+  letter-spacing: -2px;
+  margin-bottom: 15px;
+}
